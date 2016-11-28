@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		List<Produto> produtos = new ArrayList<>();
+		
+		produtos.add(new Produto("Tênis", 300.0));
+		produtos.add(new Produto("Camisa", 200.0));
+		produtos.add(new Produto("Calça", 250.0));
+		
+		produtos.forEach(System.out::println);
+		
+		Carrinho carrinho = new Carrinho(produtos);
+		carrinho.acrescimo(10, p -> p.getValor() < 250);
+		
+		produtos.forEach(System.out::println);
+		
+		(int x, int y) -> x + y;
+		
+		(e1, e2) -> {
+			int result = e1.compareTo(e2);
+			System.out.println(e1 + " " +  e2 + " " + result);
+			return result;
+		}
+	}
+}

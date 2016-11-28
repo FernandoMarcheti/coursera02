@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Comparador<E> {
+
+	public static List<Diferenca> getDiferencas(E novo, E velho){
+		List<Diferenca> diferencas = new ArrayList<>();
+		
+		
+		return diferencas;
+	}
+}

@@ -1,0 +1,37 @@
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.dbunit.Assertion;
+import org.dbunit.JdbcDatabaseTester;
+import org.dbunit.util.fileloader.FlatXmlDataFileLoader;
+import org.junit.Before;
+import org.junit.Test;
+
+public class UsuarioTest {
+
+	private JdbcDatabaseTester tester;
+	
+	@Before
+	public void setup() throws Exception {
+		tester = new JdbcDatabaseTester("com.mysql.jdbc.Driver", "jdbc:mysql://localhost:3306/usuario?useSSL=false", "root", "root");
+		FlatXmlDataFileLoader loader = new FlatXmlDataFileLoader();
+		tester.setDataSet(loader.load("/usuarios.xml"));
+		//tester.onSetup();
+	}
+	
+	@Test
+	public void testGet() {
+		UsuarioDAO dao = new UsuarioDAO();
+		List<Usuario> list = dao.get();
+		assertEquals(2, list.size());
+	}
+	
+	@Test
+	public void testInsert() {
+		UsuarioDAO dao = new UsuarioDAO();
+		List<Usuario> list = dao.get();
+		assertEquals(2, list.size());
+	}
+
+}

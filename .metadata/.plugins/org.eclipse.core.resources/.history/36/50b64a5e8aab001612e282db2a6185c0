@@ -1,0 +1,9 @@
+
+@FunctionalInterface
+public interface Condicao<E> {
+	boolean acrescimo(E e);
+	
+	void teste(){
+		System.out.println("teste");
+	}
+}

@@ -1,0 +1,17 @@
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class UsuarioDAO {
+
+	private Connection conexao;
+
+	public UsuarioDAO() {
+		try {
+			conexao = ConexaoMySQL.getConexao();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+}

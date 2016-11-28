@@ -1,0 +1,5 @@
+
+@FunctionalInterface
+public interface Condicao<E> {
+	boolean acrescimo(E e);
+}

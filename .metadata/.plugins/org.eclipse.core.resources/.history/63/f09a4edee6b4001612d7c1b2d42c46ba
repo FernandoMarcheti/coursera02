@@ -1,0 +1,24 @@
+import static org.junit.Assert.*;
+
+import org.dbunit.JdbcDatabaseTester;
+import org.junit.Before;
+import org.junit.Test;
+
+public class UsuarioTest {
+
+	@Before
+	public void setup(){
+		try {
+			JdbcDatabaseTester tester = new JdbcDatabaseTester("com.mysql.jdbc.Driver", "jdbc:mysql://localhost:3306/usuario?useSSL=false");
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

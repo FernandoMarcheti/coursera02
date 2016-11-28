@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Principal {
+	 @FunctionalInterface
+		public interface Inteiro{
+			int getValue();
+		}
+		
+		@FunctionalInterface
+		public interface ValorQuadrado{
+			int aplicaPotenciaDois(Inteiro i);
+		}
+		
+		public static void main(String[] args) {
+			
+			ValorQuadrado vq = e -> e.getValue() * e.getValue();
+			System.out.println(vq.aplicaPotenciaDois(() -> 7));
+			
+			int b = (int) Math.sqrt(81);
+			System.out.println(vq.aplicaPotenciaDois(() -> b));
+	  }
+	// public static void main(String[] args) {
+	// List<Produto> produtos = new ArrayList<>();
+	//
+	// produtos.add(new Produto("Tênis", 300.0));
+	// produtos.add(new Produto("Camisa", 200.0));
+	// produtos.add(new Produto("Calça", 250.0));
+	//
+	// produtos.forEach(System.out::println);
+	//
+	// Carrinho carrinho = new Carrinho(produtos);
+	// carrinho.acrescimo(10, p -> p.getValor() < 250);
+	//
+	// produtos.forEach(System.out::println);
+	// }
+}

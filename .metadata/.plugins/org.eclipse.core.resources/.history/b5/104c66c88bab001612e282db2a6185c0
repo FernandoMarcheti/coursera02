@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Principal {
+	@FunctionalInterface
+	public interface Inteiro {
+		int getValue(String s);
+	}
+
+	public static void main(String[] args) {
+
+		Inteiro i = s -> 42;
+		System.out.println(i.getValue());
+//		i = () -> 49;
+//		System.out.println(i.getValue());
+	}
+	// public static void main(String[] args) {
+	// List<Produto> produtos = new ArrayList<>();
+	//
+	// produtos.add(new Produto("Tênis", 300.0));
+	// produtos.add(new Produto("Camisa", 200.0));
+	// produtos.add(new Produto("Calça", 250.0));
+	//
+	// produtos.forEach(System.out::println);
+	//
+	// Carrinho carrinho = new Carrinho(produtos);
+	// carrinho.acrescimo(10, p -> p.getValor() < 250);
+	//
+	// produtos.forEach(System.out::println);
+	// }
+}

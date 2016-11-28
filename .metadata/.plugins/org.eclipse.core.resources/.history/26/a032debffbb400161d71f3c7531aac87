@@ -1,0 +1,9 @@
+
+public class Diferenca {
+
+	String propriedade;
+	Object objVelho;
+	Object objNovo;
+	
+	
+}

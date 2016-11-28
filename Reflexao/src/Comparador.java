@@ -1,0 +1,26 @@
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Comparador {
+
+	public static <E> List<Diferenca> getDiferencas(E novo, E velho) throws Exception {
+		List<Diferenca> diferencas = new ArrayList<>();
+		
+		Class<?> clazz = velho.getClass();
+		for(Method m : clazz.getMethods()){
+			if(m.getName().startsWith("get") && 
+					m.getParameterCount() == 0 && 
+					m.getReturnType() != void.class){
+				Object invokeVelho = m.invoke(velho);
+				Object invokeNovo = m.invoke(novo);
+				
+				if(!invokeNovo.equals(invokeVelho)){
+					Diferenca diferenca = new Diferenca(m.getName(), invokeVelho, invokeNovo);
+					diferencas.add(diferenca);
+				}
+			}
+		}
+		return diferencas;
+	}
+}

@@ -1,0 +1,18 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class UsuarioDAO {
+
+	public void salvar(Usuario usuario){
+		String sql = "insert into usuario (usuario, nome, email) values ?, ?, ?";
+		try(Connection c = ConexaoMySQL.getConexao()){
+			PreparedStatement ps = c.prepareStatement(sql);
+			ps.setString(1, usuario.getUsuario());
+			ps.setString(2, usuario.getNome());
+			ps.setString(3, usuario.getEmail());
+			
+			ps.execute();
+		} catch (Exception e) {
+		}
+	}
+}

@@ -1,0 +1,6 @@
+
+public interface Condicao<E> {
+	boolean acrescimo(E e);
+	
+	void teste();
+}

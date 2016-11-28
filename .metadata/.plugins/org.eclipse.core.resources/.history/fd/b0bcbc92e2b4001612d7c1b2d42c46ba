@@ -1,0 +1,12 @@
+import java.sql.Connection;
+
+public class UsuarioDAO {
+
+	public void salvar(Usuario usuario){
+		String sql = "insert into usuario (usuario, nome, email) values ?, ?, ?";
+		try(Connection c = ConexaoMySQL.getConexao()){
+			
+		} catch (Exception e) {
+		}
+	}
+}

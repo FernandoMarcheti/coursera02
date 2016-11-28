@@ -1,0 +1,16 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Usuario usuario = new Usuario();
+		usuario.setEmail("fernandomarcheti@gmail.com");
+		usuario.setNome("Fernando Marcheti");
+		usuario.setUsuario("fmarcheti");
+		
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		usuarioDAO.salvar(usuario);
+		
+		
+	}
+}

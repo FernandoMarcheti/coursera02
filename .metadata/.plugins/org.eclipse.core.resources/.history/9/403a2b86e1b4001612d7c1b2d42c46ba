@@ -1,0 +1,10 @@
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class UsuarioDAO {
+
+	public void salvar(Usuario usuario){
+		String sql = "INSERT INTO usuario ";
+		try(Connection c = ConexaoMySQL.getConexao())
+	}
+}
